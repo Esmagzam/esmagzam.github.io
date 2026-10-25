@@ -542,6 +542,52 @@
       line-height: 1.4;
     }
 
+    /* General Info / Personal Details */
+    .general-info-wrap {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+    }
+    .general-info-heading {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .general-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+    .info-item {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: border-color 0.25s, background-color 0.25s;
+    }
+    .info-item:hover {
+      border-color: var(--line-strong);
+      background: var(--surface-hover);
+    }
+    .info-item-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .info-item-value {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--fg);
+      line-height: 1.45;
+    }
+
     /* 02. Education & Credentials */
     .edu-list {
       display: grid;
@@ -805,8 +851,22 @@
       transform: scale(1.18);
       color: var(--bg);
     }
+    .skill-pct {
+      font-size: 10px;
+      opacity: 0.65;
+      padding: 1px 6px;
+      border-radius: 3px;
+      background: rgba(244, 244, 242, 0.08);
+      margin-left: 6px;
+      letter-spacing: 0.02em;
+    }
+    .skill-pill:hover .skill-pct {
+      background: rgba(10, 10, 11, 0.2);
+      color: var(--bg);
+      opacity: 0.95;
+    }
 
-    /* 05. Experience Timeline */
+    /* 02. Experience Timeline */
     .timeline-wrap {
       display: grid;
       gap: 32px;
@@ -826,7 +886,7 @@
       align-items: baseline;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .timeline-card-role {
       font-family: var(--serif);
@@ -841,6 +901,32 @@
       color: var(--muted);
       border: 1px solid var(--line);
       padding: 4px 10px;
+    }
+    .timeline-card-company {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--fg);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .timeline-badge-lead {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--fg);
+      border: 1px solid var(--line-strong);
+      padding: 3px 8px;
+      border-radius: 2px;
+      background: rgba(244, 244, 242, 0.06);
     }
     .timeline-card-org {
       font-family: var(--mono);
@@ -870,7 +956,44 @@
       font-family: var(--mono);
     }
 
-    /* 06. Contact Section */
+    /* 05. Languages Section */
+    .languages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+    }
+    .lang-card {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      padding: 20px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: border-color 0.25s, background-color 0.25s;
+    }
+    .lang-card:hover {
+      border-color: var(--fg);
+      background: var(--surface-hover);
+    }
+    .lang-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--fg);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lang-level {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 3px 8px;
+      border: 1px solid var(--line);
+    }
+
+    /* 07. Contact Section */
     .contact-block {
       border: 1px solid var(--line);
       background: var(--surface);
@@ -939,28 +1062,28 @@
       body {
         background: #ffffff !important;
         color: #000000 !important;
-        font-size: 10pt !important;
+        font-size: 9.5pt !important;
       }
       .bg-decor, .scroll-progress, .nav, .marquee, .btn, .ring, .hero-actions {
         display: none !important;
       }
       .container { max-width: 100% !important; padding: 0 !important; }
-      .hero { padding: 0 0 16pt 0 !important; }
+      .hero { padding: 0 0 14pt 0 !important; }
       .hero-grid {
         display: grid !important;
         grid-template-columns: 1fr auto !important;
-        gap: 20pt !important;
+        gap: 16pt !important;
         align-items: center !important;
       }
       .hero-portrait {
         display: block !important;
-        width: 85pt !important;
-        height: 85pt !important;
+        width: 75pt !important;
+        height: 75pt !important;
         margin: 0 !important;
       }
       .avatar-photo-wrap {
-        width: 85pt !important;
-        height: 85pt !important;
+        width: 75pt !important;
+        height: 75pt !important;
         border: 1px solid #333 !important;
         box-shadow: none !important;
       }
@@ -968,19 +1091,24 @@
         filter: grayscale(1) contrast(1.08) !important;
       }
       .hero-meta { border-color: #000 !important; color: #333 !important; }
-      .hero-name { font-size: 24pt !important; color: #000 !important; }
-      .hero-role { font-size: 11pt !important; color: #444 !important; }
-      .hero-tagline { font-size: 9.5pt !important; color: #333 !important; }
-      .section { padding: 14pt 0 !important; border-color: #ccc !important; page-break-inside: avoid; }
-      .section-title { font-size: 14pt !important; color: #000 !important; margin-bottom: 10pt !important; }
-      .project-card, .timeline-card, .metric-cell, .cert-box {
+      .hero-name { font-size: 22pt !important; color: #000 !important; }
+      .hero-role { font-size: 10.5pt !important; color: #333 !important; }
+      .hero-tagline { font-size: 9pt !important; color: #333 !important; }
+      .section { padding: 12pt 0 !important; border-color: #ddd !important; page-break-inside: avoid; }
+      .section-title { font-size: 13pt !important; color: #000 !important; margin-bottom: 8pt !important; }
+      .project-card, .timeline-card, .metric-cell, .cert-box, .info-item, .lang-card {
         background: #fff !important;
-        border: 1px solid #ddd !important;
+        border: 1px solid #ccc !important;
         page-break-inside: avoid;
       }
-      .project-name, .timeline-card-role { color: #000 !important; }
-      .project-body, .timeline-bullets li, .about-text p { color: #333 !important; }
-      .stack-tag, .skill-pill { border-color: #ccc !important; color: #000 !important; background: #fff !important; }
+      .project-name, .timeline-card-role, .timeline-card-company, .lang-name { color: #000 !important; }
+      .project-body, .timeline-bullets li, .about-text p, .info-item-value { color: #222 !important; }
+      .stack-tag, .skill-pill, .timeline-card-period, .timeline-badge-lead, .lang-level {
+        border-color: #bbb !important;
+        color: #000 !important;
+        background: #fff !important;
+      }
+      .skill-pct { background: #eee !important; color: #000 !important; }
     }
   </style>
 </head>
@@ -1001,10 +1129,11 @@
 
       <nav class="nav-links">
         <a href="#about" data-en="About" data-mn="Миний тухай">Миний тухай</a>
-        <a href="#education" data-en="Education" data-mn="Боловсрол">Боловсрол</a>
+        <a href="#experience" data-en="Experience" data-mn="Туршлага">Туршлага</a>
         <a href="#projects" data-en="Projects" data-mn="Төслүүд">Төслүүд</a>
         <a href="#skills" data-en="Skills" data-mn="Ур чадвар">Ур чадвар</a>
-        <a href="#experience" data-en="Experience" data-mn="Туршлага">Туршлага</a>
+        <a href="#languages" data-en="Languages" data-mn="Гадаад хэл">Гадаад хэл</a>
+        <a href="#education" data-en="Education" data-mn="Боловсрол">Боловсрол</a>
         <a href="#contact" data-en="Contact" data-mn="Холбоо барих">Холбоо барих</a>
       </nav>
 
@@ -1031,8 +1160,11 @@
         <div class="hero-meta">
           <span><i class="dot"></i><span data-en="Available for work" data-mn="Ажилд бэлэн">Ажилд бэлэн</span></span>
           <span class="spacer"></span>
-          <span>Ulaanbaatar &middot; UTC+8</span>
-          <span data-en="Web & Mobile Engineering" data-mn="Вэб & Мобайл хөгжүүлэлт">Вэб & Мобайл хөгжүүлэлт</span>
+          <span data-en="Sukhbaatar District, Ulaanbaatar" data-mn="Сүхбаатар дүүрэг, Улаанбаатар">Сүхбаатар дүүрэг, Улаанбаатар</span>
+          <span class="spacer"></span>
+          <span data-en="Frontend & Mobile Software Engineer" data-mn="Frontend хөгжүүлэгч">Frontend хөгжүүлэгч</span>
+          <span class="spacer"></span>
+          <span>+976 9555 0696</span>
         </div>
 
         <div class="hero-grid">
@@ -1047,6 +1179,10 @@
               <a href="#projects" class="btn btn-primary">
                 <i class="devicon-apple-original"></i>
                 <span data-en="My Projects" data-mn="Миний бүтээлүүд">Миний бүтээлүүд</span>
+              </a>
+              <a href="#experience" class="btn btn-ghost">
+                <i class="devicon-fastapi-plain"></i>
+                <span data-en="Experience" data-mn="Ажлын туршлага">Ажлын туршлага</span>
               </a>
               <a href="#skills" class="btn btn-ghost">
                 <i class="devicon-typescript-plain"></i>
@@ -1126,18 +1262,21 @@
     <!-- 01. About Me -->
     <section id="about" class="section">
       <div class="container">
-        <h2 class="section-title"><span class="num">01.</span> <span data-en="About me" data-mn="Миний тухай">Миний тухай</span></h2>
+        <h2 class="section-title"><span class="num">01.</span> <span data-en="About me & General info" data-mn="Миний тухай & Ерөнхий мэдээлэл">Миний тухай & Ерөнхий мэдээлэл</span></h2>
 
         <div class="about-grid">
           <div class="about-text">
-            <p data-en="Hello. My name is Yesmagzam Samalkhan. I am a software engineer specializing in frontend web engineering and cross-platform mobile development. Currently completing my senior year in Software Engineering at the Mongolian University of Life Sciences (MULS)." data-mn="Сайн байна уу. Намайг Самалхан Есмагзам гэдэг. Би фронтенд вэб хөгжүүлэлт болон мобайл технологиор дагнасан программ хангамжийн инженер. Одоогоор Хөдөө Аж Ахуйн Их Сургуульд Программ хангамжийн чиглэлээр төгсөх курст суралцаж байна.">
-              Сайн байна уу. Намайг Самалхан Есмагзам гэдэг. Би фронтенд вэб хөгжүүлэлт болон мобайл технологиор дагнасан программ хангамжийн инженер. Одоогоор Хөдөө Аж Ахуйн Их Сургуульд Программ хангамжийн чиглэлээр төгсөх курст суралцаж байна.
+            <p data-en="Hello. My name is Yesmagzam Samalkhan. I am a software engineer specializing in frontend web engineering and cross-platform mobile development, holding a Bachelor's degree in Software Engineering from the Mongolian University of Life Sciences (GPA 3.0)." data-mn="Сайн байна уу. Намайг Самалхан Есмагзам гэдэг. Би фронтенд вэб болон мобайл аппликейшн хөгжүүлэлтээр дагнасан программ хангамжийн инженер. Хөдөө Аж Ахуйн Их Сургуульд Программ хангамжийн чиглэлээр амжилттай суралцаж төгссөн (Голч дүн: 3.0).">
+              Сайн байна уу. Намайг Самалхан Есмагзам гэдэг. Би фронтенд вэб болон мобайл аппликейшн хөгжүүлэлтээр дагнасан программ хангамжийн инженер. Хөдөө Аж Ахуйн Их Сургуульд Программ хангамжийн чиглэлээр амжилттай суралцаж төгссөн (Голч дүн: 3.0).
             </p>
-            <p data-en="On the web, I focus on crafting clean, semantic, and pixel-perfect interfaces utilizing TypeScript, JavaScript, Tailwind CSS, and HTML5/CSS3. On mobile, I engineer high-performance iOS and Android applications with Flutter & Dart, backed by Supabase and PostgreSQL cloud architectures." data-mn="Вэб хөгжүүлэлтийн чиглэлээр TypeScript, JavaScript, Tailwind CSS болон семантик HTML5/CSS3 ашиглан ямар ч дэлгэцэнд зохицсон, цэвэр кодтой фронтенд шийдлүүдийг боловсруулдаг. Харин мобайл орчинд Flutter & Dart болон Supabase, PostgreSQL ашиглан олон улсын зах зээлд өрсөлдөхүйц 4 бодит iOS аппликейшнийг бие даан нийтэлсэн туршлагатай.">
-              Вэб хөгжүүлэлтийн чиглэлээр TypeScript, JavaScript, Tailwind CSS болон семантик HTML5/CSS3 ашиглан ямар ч дэлгэцэнд зохицсон, цэвэр кодтой фронтенд шийдлүүдийг боловсруулдаг. Харин мобайл орчинд Flutter & Dart болон Supabase, PostgreSQL ашиглан олон улсын зах зээлд өрсөлдөхүйц 4 бодит iOS аппликейшнийг бие даан нийтэлсэн туршлагатай.
+            <p data-en="In web development, I construct responsive, user-friendly, and accessible interfaces using TypeScript, JavaScript, Tailwind CSS, and semantic HTML5/CSS3. I place utmost importance on readable code structure, modular reusability, and continuous future maintainability." data-mn="Вэб хөгжүүлэлтэд TypeScript, JavaScript, Tailwind CSS болон семантик HTML5/CSS3 ашиглан дэлгэцийн төрөл, хэмжээнд зохицсон, хэрэглэхэд хялбар интерфэйс бүтээдэг. Кодын ойлгомжтой бүтэц, дахин ашиглах боломж, цаашдын хөгжүүлэлтэд онцгой анхаардаг.">
+              Вэб хөгжүүлэлтэд TypeScript, JavaScript, Tailwind CSS болон семантик HTML5/CSS3 ашиглан дэлгэцийн төрөл, хэмжээнд зохицсон, хэрэглэхэд хялбар интерфэйс бүтээдэг. Кодын ойлгомжтой бүтэц, дахин ашиглах боломж, цаашдын хөгжүүлэлтэд онцгой анхаардаг.
             </p>
-            <p data-en="My approach bridges UI/UX design and engineering rigor: from wireframing in Figma to structured data modeling, responsive component styling, and workflow automation with n8n and Git." data-mn="Би зөвхөн код бичих бус, Figma дээрх хэрэглэгчийн интерфэйс дизайнаас эхлэн өгөгдлийн сангийн зөв зохион байгуулалт, n8n ажлын урсгалын автоматжуулалт болон цэвэр архитектурын зарчмыг бүх бүтээгдэхүүндээ шингээдэг.">
-              Би зөвхөн код бичих бус, Figma дээрх хэрэглэгчийн интерфэйс дизайнаас эхлэн өгөгдлийн сангийн зөв зохион байгуулалт, n8n ажлын урсгалын автоматжуулалт болон цэвэр архитектурын зарчмыг бүх бүтээгдэхүүндээ шингээдэг.
+            <p data-en="In mobile engineering, I have independently developed and published 4 native iOS applications to the Apple App Store using Flutter and Dart. For cloud backends, I leverage Supabase and PostgreSQL to handle databases, authentication, and server-side operations." data-mn="Мобайл хөгжүүлэлтийн чиглэлээр Flutter, Dart ашиглан iOS-ийн 4 аппликейшнийг бие даан хөгжүүлж, App Store-д нийтэлсэн туршлагатай. Мөн Supabase, PostgreSQL ашиглан өгөгдлийн сан болон сервер талын үйлчилгээг шийддэг.">
+              Мобайл хөгжүүлэлтийн чиглэлээр Flutter, Dart ашиглан iOS-ийн 4 аппликейшнийг бие даан хөгжүүлж, App Store-д нийтэлсэн туршлагатай. Мөн Supabase, PostgreSQL ашиглан өгөгдлийн сан болон сервер талын үйлчилгээг шийддэг.
+            </p>
+            <p data-en="Across my projects, I bridge UI design in Figma with robust database schemas, clean architecture, and n8n-based workflow automations. My core mission is to create reliable, scalable, and intuitive products that genuinely solve real user needs." data-mn="Бүтээгдэхүүн хөгжүүлэхдээ Figma дээрх интерфэйсийн дизайнаас эхлээд өгөгдлийн сангийн бүтэц, цэвэр архитектур, n8n-д суурилсан ажлын урсгалын автоматжуулалт хүртэлх шийдлүүдийг уялдуулан ажилладаг. Миний зорилго бол хэрэглэгчийн хэрэгцээг шийдсэн, найдвартай ажиллагаатай, цаашид өргөжүүлэн хөгжүүлэхэд хялбар бүтээгдэхүүн бүтээх юм.">
+              Бүтээгдэхүүн хөгжүүлэхдээ Figma дээрх интерфэйсийн дизайнаас эхлээд өгөгдлийн сангийн бүтэц, цэвэр архитектур, n8n-д суурилсан ажлын урсгалын автоматжуулалт хүртэлх шийдлүүдийг уялдуулан ажилладаг. Миний зорилго бол хэрэглэгчийн хэрэгцээг шийдсэн, найдвартай ажиллагаатай, цаашид өргөжүүлэн хөгжүүлэхэд хялбар бүтээгдэхүүн бүтээх юм.
             </p>
           </div>
 
@@ -1147,84 +1286,152 @@
               <div class="metric-title" data-en="Live Apps on Apple App Store" data-mn="App Store-д нийтэлсэн iOS апп">App Store-д нийтэлсэн iOS апп</div>
             </div>
             <div class="metric-cell">
-              <div class="metric-val">Web+App</div>
-              <div class="metric-title" data-en="Frontend & Mobile Synergy" data-mn="Вэб & Мобайл хосолсон ур чадвар">Вэб & Мобайл хосолсон ур чадвар</div>
+              <div class="metric-val" data-en="2 Devs" data-mn="2 Хүн">2 Хүн</div>
+              <div class="metric-title" data-en="Led Dev Team Experience" data-mn="Баг удирдаж ажилласан туршлага">Баг удирдаж ажилласан туршлага</div>
             </div>
             <div class="metric-cell">
               <div class="metric-val">100%</div>
               <div class="metric-title" data-en="End-to-End Delivery" data-mn="Санаанаас нийтлэл хүртэлх бие даасан гүйцэтгэл">Санаанаас нийтлэл хүртэлх бие даасан гүйцэтгэл</div>
             </div>
             <div class="metric-cell">
-              <div class="metric-val">2026</div>
-              <div class="metric-title" data-en="Software Engineering Degree" data-mn="Программ хангамжийн бакалавр">Программ хангамжийн бакалавр</div>
+              <div class="metric-val">3.0</div>
+              <div class="metric-title" data-en="Software Engineering GPA" data-mn="Программ хангамжийн бакалавр (3.0 голч)">Программ хангамжийн бакалавр (3.0 голч)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- General Info & Key Details from Official CV -->
+        <div class="general-info-wrap">
+          <div class="general-info-heading" data-en="Personal & Professional Summary" data-mn="Ерөнхий мэдээлэл & Анкетын үзүүлэлт">Ерөнхий мэдээлэл & Анкетын үзүүлэлт</div>
+          <div class="general-info-grid">
+            <div class="info-item">
+              <span class="info-item-label" data-en="Date of Birth" data-mn="Төрсөн огноо">Төрсөн огноо</span>
+              <span class="info-item-value" data-en="Oct 26, 2002 (Age 23)" data-mn="2002-10-26 (23 нас)">2002-10-26 (23 нас)</span>
+            </div>
+            <div class="info-item">
+              <span class="info-item-label" data-en="Gender & Status" data-mn="Хүйс & Гэрлэлтийн байдал">Хүйс & Гэрлэлтийн байдал</span>
+              <span class="info-item-value" data-en="Male &middot; Single" data-mn="Эрэгтэй &middot; Гэрлээгүй">Эрэгтэй &middot; Гэрлээгүй</span>
+            </div>
+            <div class="info-item">
+              <span class="info-item-label" data-en="Location" data-mn="Оршин суугаа хаяг">Оршин суугаа хаяг</span>
+              <span class="info-item-value" data-en="Sukhbaatar District, Ulaanbaatar" data-mn="Сүхбаатар дүүрэг, Улаанбаатар">Сүхбаатар дүүрэг, Улаанбаатар</span>
+            </div>
+            <div class="info-item">
+              <span class="info-item-label" data-en="Civil Registry No." data-mn="Регистрийн дугаар">Регистрийн дугаар</span>
+              <span class="info-item-value">БЗ02302611</span>
+            </div>
+            <div class="info-item">
+              <span class="info-item-label" data-en="Target Roles" data-mn="Сонирхож буй ажлын байр">Сонирхож буй ажлын байр</span>
+              <span class="info-item-value" data-en="Frontend Developer &middot; Mobile Engineer &middot; IT Support &middot; Systems Engineer" data-mn="Frontend хөгжүүлэгч &middot; Мобайл инженер &middot; Мэдээлэл технологийн инженер &middot; Системийн инженер">Frontend хөгжүүлэгч &middot; Мобайл инженер &middot; Мэдээлэл технологийн инженер &middot; Системийн инженер</span>
+            </div>
+            <div class="info-item">
+              <span class="info-item-label" data-en="Salary Expectation" data-mn="Цалингийн хүлээлт">Цалингийн хүлээлт</span>
+              <span class="info-item-value" data-en="1,800,000 - 2,100,000 MNT &middot; Full-time" data-mn="1,800,000 - 2,100,000₮ &middot; Бүтэн цагийн">1,800,000 - 2,100,000₮ &middot; Бүтэн цагийн</span>
+            </div>
+            <div class="info-item">
+              <span class="info-item-label" data-en="Leadership Experience" data-mn="Баг удирдах туршлага">Баг удирдах туршлага</span>
+              <span class="info-item-value" data-en="Led 2-person development team at Supermarket web project" data-mn="Супермаркетын вэб төсөлд 2 хүнтэй хөгжүүлэлтийн баг удирдан ажилласан">Супермаркетын вэб төсөлд 2 хүнтэй хөгжүүлэлтийн баг удирдан ажилласан</span>
+            </div>
+            <div class="info-item">
+              <span class="info-item-label" data-en="Direct Contacts" data-mn="Холбоо барих">Холбоо барих</span>
+              <span class="info-item-value">+976 9555 0696 &middot; esh6889@gmail.com &middot; eska esko</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 02. Education & Credentials -->
-    <section id="education" class="section section-alt">
+    <!-- 02. Experience -->
+    <section id="experience" class="section section-alt">
       <div class="container">
-        <h2 class="section-title"><span class="num">02.</span> <span data-en="Education & Certificates" data-mn="Боловсрол & Сертификат">Боловсрол & Сертификат</span></h2>
+        <h2 class="section-title"><span class="num">02.</span> <span data-en="Work Experience" data-mn="Ажлын туршлага">Ажлын туршлага</span></h2>
 
-        <div class="edu-list">
-          <article class="edu-item">
-            <div class="edu-item-period">2022 — 2026</div>
-            <div class="edu-item-body">
-              <h3 data-en="Bachelor of Software Engineering" data-mn="Программ хангамжийн бакалавр">Программ хангамжийн бакалавр</h3>
-              <div class="edu-item-inst" data-en="Mongolian University of Life Sciences (MULS)" data-mn="Хөдөө Аж Ахуйн Их Сургууль (ХААИС)">Хөдөө Аж Ахуйн Их Сургууль (ХААИС)</div>
-              <p class="edu-item-desc" data-en="Majoring in Software Engineering. Core coursework in Data Structures, Algorithms, Relational Database Design, Object-Oriented Programming, and Web Architectures. Current GPA: 3.0." data-mn="Программ хангамжийн чиглэлээр суралцаж буй төгсөх курсийн оюутан. Өгөгдлийн бүтэц, алгоритм, өгөгдлийн сангийн бүтэц, объект хандалтат программчлал болон вэб архитектурын чиглэлээр мэргэшиж байна. Голч: 3.0.">
-                Программ хангамжийн чиглэлээр суралцаж буй төгсөх курсийн оюутан. Өгөгдлийн бүтэц, алгоритм, өгөгдлийн сангийн бүтэц, объект хандалтат программчлал болон вэб архитектурын чиглэлээр мэргэшиж байна. Голч: 3.0.
-              </p>
+        <div class="timeline-wrap">
+          <!-- Job 1: Private Bookstore -->
+          <article class="timeline-card">
+            <div class="timeline-card-header">
+              <h3 class="timeline-card-role" data-en="IT Support Specialist" data-mn="Мэдээллийн технологийн дэмжлэгийн ажилтан">Мэдээллийн технологийн дэмжлэгийн ажилтан</h3>
+              <span class="timeline-card-period">7 сар &middot; 2026-01-15 — 2026-08-31</span>
             </div>
+            <div class="timeline-card-company">
+              <span data-en="Private Bookstore" data-mn="Хувийн номын дэлгүүр">Хувийн номын дэлгүүр</span>
+            </div>
+            <div class="timeline-card-org" data-en="IT Operations &amp; Technical Support" data-mn="Мэдээллийн технологи &amp; Техник дэмжлэг">Мэдээллийн технологи &amp; Техник дэмжлэг</div>
+
+            <ul class="timeline-bullets">
+              <li data-en="Provided day-to-day IT support and technical assistance across all bookstore business operations." data-mn="Номын дэлгүүрийн өдөр тутмын үйл ажиллагаанд мэдээллийн технологийн тасралтгүй найдвартай дэмжлэг үзүүлж ажилласан.">
+                Номын дэлгүүрийн өдөр тутмын үйл ажиллагаанд мэдээллийн технологийн тасралтгүй найдвартай дэмжлэг үзүүлж ажилласан.
+              </li>
+              <li data-en="Diagnosed and resolved hardware, software, and system issues efficiently during daily operations." data-mn="Компьютер болон программ хангамжийн ашиглалтын явцад үүссэн техникийн асуудал, саатлыг оношилж, түргэн шуурхай шийдвэрлэх ажлыг гүйцэтгэсэн.">
+                Компьютер болон программ хангамжийн ашиглалтын явцад үүссэн техникийн асуудал, саатлыг оношилж, түргэн шуурхай шийдвэрлэх ажлыг гүйцэтгэсэн.
+              </li>
+              <li data-en="Instructed and advised staff members on application software and hardware peripherals to maintain smooth, uninterrupted workflows." data-mn="Ажилтнуудад программ, төхөөрөмж ашиглах талаар заавар зөвлөгөө өгч, байгууллагын ажлын хэвийн найдвартай ажиллагааг хангахад дэмжлэг үзүүлсэн.">
+                Ажилтнуудад программ, төхөөрөмж ашиглах талаар заавар зөвлөгөө өгч, байгууллагын ажлын хэвийн найдвартай ажиллагааг хангахад дэмжлэг үзүүлсэн.
+              </li>
+            </ul>
           </article>
-        </div>
 
-        <div class="certs-grid">
-          <div class="cert-box">
-            <div class="cert-left">
-              <div class="cert-icon"><i class="devicon-html5-plain"></i></div>
-              <div>
-                <div class="cert-title">Introduction to Front-End Development</div>
-                <div class="cert-issuer">Coursera (Meta)</div>
-              </div>
+          <!-- Job 2: Supermarket -->
+          <article class="timeline-card">
+            <div class="timeline-card-header">
+              <h3 class="timeline-card-role" data-en="Web Developer &amp; Team Lead" data-mn="Вэб хөгжүүлэгч &amp; Багийн ахлагч">Вэб хөгжүүлэгч &amp; Багийн ахлагч</h3>
+              <span class="timeline-card-period">1 жил &middot; 2025-01-01 — 2026-01-01</span>
             </div>
-            <div class="cert-date">2022 — 2023</div>
-          </div>
+            <div class="timeline-card-company">
+              <span data-en="Supermarket" data-mn="Супермаркет">Супермаркет</span>
+              <span class="timeline-badge-lead">
+                <i class="devicon-chrome-plain"></i>
+                <span data-en="Led 2-Person Dev Team" data-mn="2 хүнтэй баг удирдсан">2 хүнтэй баг удирдсан</span>
+              </span>
+            </div>
+            <div class="timeline-card-org" data-en="E-Commerce &amp; Customer-Facing Web Platform" data-mn="Хэрэглэгчийн вэб платформ &amp; Фронтенд хөгжүүлэлт">Хэрэглэгчийн вэб платформ &amp; Фронтенд хөгжүүлэлт</div>
 
-          <div class="cert-box">
-            <div class="cert-left">
-              <div class="cert-icon"><i class="devicon-python-plain"></i></div>
-              <div>
-                <div class="cert-title">Python (Basic) Certificate</div>
-                <div class="cert-issuer">HackerRank</div>
-              </div>
-            </div>
-            <div class="cert-date">2022 — 2023</div>
-          </div>
+            <ul class="timeline-bullets">
+              <li data-en="Engineered, updated, and debugged the user interface for the supermarket's customer-facing web platform." data-mn="Супермаркетын вэбсайтын хэрэглэгчийн интерфэйсийг эхнээс нь хөгжүүлэх, шинэчлэх, системийн алдаа засварлах (bug fixing) ажлуудыг хариуцан гүйцэтгэсэн.">
+                Супермаркетын вэбсайтын хэрэглэгчийн интерфэйсийг эхнээс нь хөгжүүлэх, шинэчлэх, системийн алдаа засварлах (bug fixing) ажлуудыг хариуцан гүйцэтгэсэн.
+              </li>
+              <li data-en="Developed responsive layouts adapting across desktop and mobile screens, optimizing website usability (UI/UX), code structure, and page loading speed." data-mn="Компьютер болон гар утасны дэлгэцэнд зохицсон (responsive) харагдац боловсруулж, вэбсайтын ашиглахад хялбар байдал, кодын бүтэц, ажиллагааны хурдыг сайжруулсан.">
+                Компьютер болон гар утасны дэлгэцэнд зохицсон (responsive) харагдац боловсруулж, вэбсайтын ашиглахад хялбар байдал, кодын бүтэц, ажиллагааны хурдыг сайжруулсан.
+              </li>
+              <li data-en="Successfully led and mentored a 2-person development team, coordinating task distribution, code reviews, and quality delivery on schedule." data-mn="2 хүнтэй хөгжүүлэлтийн багийг удирдан чиглүүлж, ажлын даалгавар хуваарилах, код ревью хийх, чанарын хяналтыг ханган амжилттай хүлээлгэн өгсөн.">
+                2 хүнтэй хөгжүүлэлтийн багийг удирдан чиглүүлж, ажлын даалгавар хуваарилах, код ревью хийх, чанарын хяналтыг ханган амжилттай хүлээлгэн өгсөн.
+              </li>
+            </ul>
+          </article>
 
-          <div class="cert-box">
-            <div class="cert-left">
-              <div class="cert-icon"><i class="devicon-flutter-plain"></i></div>
-              <div>
-                <div class="cert-title">Flutter & Dart - The Complete Developer's Guide</div>
-                <div class="cert-issuer">Udemy</div>
-              </div>
+          <!-- Job 3: Independent Engineering -->
+          <article class="timeline-card">
+            <div class="timeline-card-header">
+              <h3 class="timeline-card-role" data-en="Frontend &amp; Mobile Software Engineer (Independent)" data-mn="Фронтенд &amp; Мобайл хөгжүүлэгч (Бие даасан)">Фронтенд &amp; Мобайл хөгжүүлэгч (Бие даасан)</h3>
+              <span class="timeline-card-period">2023 — Present</span>
             </div>
-            <div class="cert-date">2023 — 2024</div>
-          </div>
+            <div class="timeline-card-company">
+              <span data-en="Product Engineering &middot; 4 iOS Apps &amp; Web Solutions" data-mn="Бүтээгдэхүүн хөгжүүлэлт &middot; 4 iOS Апп &amp; Вэб шийдлүүд">Бүтээгдэхүүн хөгжүүлэлт &middot; 4 iOS Апп &amp; Вэб шийдлүүд</span>
+              <span class="timeline-badge-lead">
+                <i class="devicon-apple-original"></i>
+                <span data-en="4 iOS Apps on App Store" data-mn="App Store-д 4 Апп нийтэлсэн">App Store-д 4 Апп нийтэлсэн</span>
+              </span>
+            </div>
+            <div class="timeline-card-org">Flutter &amp; Dart &middot; TypeScript &middot; Tailwind CSS &middot; Supabase &middot; PostgreSQL</div>
 
-          <div class="cert-box">
-            <div class="cert-left">
-              <div class="cert-icon"><i class="devicon-firebase-plain"></i></div>
-              <div>
-                <div class="cert-title">Flutter & Firebase: Build 5 Social Media Apps</div>
-                <div class="cert-issuer">Udemy</div>
-              </div>
-            </div>
-            <div class="cert-date">2023 — 2024</div>
-          </div>
+            <ul class="timeline-bullets">
+              <li data-en="Independently designed, architected, and shipped 4 production mobile applications to the Apple App Store, handling 100% of the lifecycle from Figma UX prototypes to App Store approval." data-mn="Figma дээрх UI дизайнаас эхлэн эцсийн хувилбар хүртэл 4 бодит мобайл аппликейшнийг бие даан архитектурчилж, Apple App Store-д олон улсын зах зээлд амжилттай нийтэлсэн.">
+                Figma дээрх UI дизайнаас эхлэн эцсийн хувилбар хүртэл 4 бодит мобайл аппликейшнийг бие даан архитектурчилж, Apple App Store-д олон улсын зах зээлд амжилттай нийтэлсэн.
+              </li>
+              <li data-en="Architected cloud databases and authentication flows in Supabase and PostgreSQL, enforcing Row-Level Security (RLS) policies and RESTful API endpoints." data-mn="Supabase болон PostgreSQL орчинд өгөгдлийн бааз төлөвлөж, Row-Level Security (RLS), хэрэглэгчийн баталгаажуулалт болон REST API холболтуудыг нэвтрүүлсэн.">
+                Supabase болон PostgreSQL орчинд өгөгдлийн бааз төлөвлөж, Row-Level Security (RLS), хэрэглэгчийн баталгаажуулалт болон REST API холболтуудыг нэвтрүүлсэн.
+              </li>
+              <li data-en="Developed responsive, semantic, and performant web interfaces utilizing HTML5, CSS3, modern JavaScript, and Tailwind CSS." data-mn="HTML5, CSS3, орчин үеийн JavaScript болон Tailwind CSS ашиглан олон төрлийн дэлгэцэнд зохицсон, цэвэр бүтэцтэй вэб интерфэйсүүдийг хөгжүүлсэн.">
+                HTML5, CSS3, орчин үеийн JavaScript болон Tailwind CSS ашиглан олон төрлийн дэлгэцэнд зохицсон, цэвэр бүтэцтэй вэб интерфэйсүүдийг хөгжүүлсэн.
+              </li>
+              <li data-en="Utilized TypeScript to build strongly-typed client-side logic, reducing runtime bugs and ensuring robust data handling across applications." data-mn="TypeScript ашиглан хэрэглэгчийн талын логикийг алдаагүй, төрөлжсөн (type-safe) байдлаар бичиж өгөгдлийн боловсруулалтыг найдвартай болгосон.">
+                TypeScript ашиглан хэрэглэгчийн талын логикийг алдаагүй, төрөлжсөн (type-safe) байдлаар бичиж өгөгдлийн боловсруулалтыг найдвартай болгосон.
+              </li>
+              <li data-en="Automated repetitive workflows and deployment tasks using n8n and Git version control." data-mn="Ажлын урсгалыг оновчлох, өгөгдлийн боловсруулалтыг автоматжуулахад n8n болон Git хувилбар удирдлагыг ашигласан.">
+                Ажлын урсгалыг оновчлох, өгөгдлийн боловсруулалтыг автоматжуулахад n8n болон Git хувилбар удирдлагыг ашигласан.
+              </li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -1243,7 +1450,7 @@
                 <span class="project-badge"><i class="devicon-apple-original"></i> iOS &middot; Productivity</span>
               </div>
               <h3 class="project-name">Focusato</h3>
-              <p class="project-tagline" data-en="Pomodoro Timer & Task Manager" data-mn="Pomodoro таймер & Даалгаврын менежер">Pomodoro таймер & Даалгаврын менежер</p>
+              <p class="project-tagline" data-en="Pomodoro Timer &amp; Task Manager" data-mn="Pomodoro таймер &amp; Даалгаврын менежер">Pomodoro таймер &amp; Даалгаврын менежер</p>
               <p class="project-body" data-en="Clean productivity app designed around the Pomodoro focus technique. Features customizable focus/break intervals, structured task organization, ambient session visualizations, sound alerts, and local session analytics." data-mn="Pomodoro аргачлалд суурилсан төвлөрөл сайжруулах гоёмсог мобайл апп. Ажиллах болон амрах цагийг тохируулах, даалгавруудыг эрэмбэлэх, төвлөрлийн түүх хадгалах боломжтой.">
                 Pomodoro аргачлалд суурилсан төвлөрөл сайжруулах гоёмсог мобайл апп. Ажиллах болон амрах цагийг тохируулах, даалгавруудыг эрэмбэлэх, төвлөрлийн түүх хадгалах боломжтой.
               </p>
@@ -1293,14 +1500,14 @@
                 <span class="project-badge"><i class="devicon-apple-original"></i> iOS &middot; Reference</span>
               </div>
               <h3 class="project-name">Phrasie</h3>
-              <p class="project-tagline" data-en="English Verbs, Phrasal Verbs & Idioms" data-mn="Англи хэлний хэлц үг & холбоос үгс">Англи хэлний хэлц үг & холбоос үгс</p>
+              <p class="project-tagline" data-en="English Verbs, Phrasal Verbs &amp; Idioms" data-mn="Англи хэлний хэлц үг &amp; холбоос үгс">Англи хэлний хэлц үг &amp; холбоос үгс</p>
               <p class="project-body" data-en="Curated English linguistics database containing 1,000+ phrasal verbs, idioms, and conjunctions. Built with zero-latency fuzzy search, text-to-speech audio pronunciation, bookmarking, and offline-first cache." data-mn="1,000 гаруй англи хэлний хэлц үйл үг, өдөр тутмын хэлц болон холбоос үгсийг багтаасан лавлах апп. Түргэн хайлт, дуудлага сонсох, тэмдэглэх болон интернетгүй ажиллах офлайн горимтой.">
                 1,000 гаруй англи хэлний хэлц үйл үг, өдөр тутмын хэлц болон холбоос үгсийг багтаасан лавлах апп. Түргэн хайлт, дуудлага сонсох, тэмдэглэх болон интернетгүй ажиллах офлайн горимтой.
               </p>
               <div class="project-stack">
                 <span class="stack-tag"><i class="devicon-flutter-plain"></i> Flutter</span>
                 <span class="stack-tag"><i class="devicon-dart-plain"></i> Dart</span>
-                <span class="stack-tag">Audio & TTS</span>
+                <span class="stack-tag">Audio &amp; TTS</span>
                 <span class="stack-tag">Offline First</span>
                 <span class="stack-tag">Fuzzy Search</span>
               </div>
@@ -1338,24 +1545,24 @@
       </div>
     </section>
 
-    <!-- 04. Skills with Full Devicons -->
+    <!-- 04. Skills with Full Devicons & Proficiencies -->
     <section id="skills" class="section section-alt">
       <div class="container">
-        <h2 class="section-title"><span class="num">04.</span> <span data-en="Technical Arsenal" data-mn="Ур чадвар">Ур чадвар</span></h2>
+        <h2 class="section-title"><span class="num">04.</span> <span data-en="Technical Arsenal &amp; Skills" data-mn="Ур чадвар">Ур чадвар</span></h2>
 
         <div class="skills-cluster">
           <!-- Web & Front-End -->
           <div class="skill-domain">
-            <h3 data-en="Web & Front-End Engineering" data-mn="Вэб & Фронтенд хөгжүүлэлт">Вэб & Фронтенд хөгжүүлэлт</h3>
+            <h3 data-en="Web &amp; Front-End Engineering" data-mn="Вэб &amp; Фронтенд хөгжүүлэлт">Вэб &amp; Фронтенд хөгжүүлэлт</h3>
             <div class="skill-tags">
-              <span class="skill-pill"><i class="devicon-typescript-plain"></i> TypeScript</span>
-              <span class="skill-pill"><i class="devicon-javascript-plain"></i> JavaScript (ES6+)</span>
-              <span class="skill-pill"><i class="devicon-tailwindcss-original"></i> Tailwind CSS</span>
-              <span class="skill-pill"><i class="devicon-html5-plain"></i> HTML5 & Semantic Web</span>
-              <span class="skill-pill"><i class="devicon-css3-plain"></i> CSS3 & Flexbox / Grid</span>
-              <span class="skill-pill"><i class="devicon-chrome-plain"></i> Responsive Web Design</span>
-              <span class="skill-pill"><i class="devicon-vitejs-plain"></i> Vite & Web Tooling</span>
-              <span class="skill-pill"><i class="devicon-firefox-plain"></i> Cross-Browser Testing</span>
+              <span class="skill-pill"><i class="devicon-html5-plain"></i> <span data-en="HTML / CSS" data-mn="HTML / CSS">HTML / CSS</span> <span class="skill-pct">90%</span></span>
+              <span class="skill-pill"><i class="devicon-typescript-plain"></i> <span>TypeScript</span></span>
+              <span class="skill-pill"><i class="devicon-javascript-plain"></i> <span>JavaScript (ES6+)</span></span>
+              <span class="skill-pill"><i class="devicon-tailwindcss-original"></i> <span>Tailwind CSS</span></span>
+              <span class="skill-pill"><i class="devicon-html5-plain"></i> <span data-en="Semantic HTML5" data-mn="Семантик HTML5">Семантик HTML5</span></span>
+              <span class="skill-pill"><i class="devicon-css3-plain"></i> <span data-en="Flexbox &amp; Grid" data-mn="Flexbox &amp; Grid">Flexbox &amp; Grid</span></span>
+              <span class="skill-pill"><i class="devicon-chrome-plain"></i> <span data-en="Responsive Design" data-mn="Responsive дизайн">Responsive дизайн</span></span>
+              <span class="skill-pill"><i class="devicon-vitejs-plain"></i> <span>Vite &amp; Tooling</span></span>
             </div>
           </div>
 
@@ -1363,95 +1570,185 @@
           <div class="skill-domain">
             <h3 data-en="Mobile Engineering" data-mn="Мобайл хөгжүүлэлт">Мобайл хөгжүүлэлт</h3>
             <div class="skill-tags">
-              <span class="skill-pill"><i class="devicon-flutter-plain"></i> Flutter</span>
-              <span class="skill-pill"><i class="devicon-dart-plain"></i> Dart</span>
-              <span class="skill-pill"><i class="devicon-apple-original"></i> iOS App Store Connect</span>
-              <span class="skill-pill"><i class="devicon-android-plain"></i> Android Studio</span>
-              <span class="skill-pill"><i class="devicon-apple-original"></i> Cupertino UI</span>
-              <span class="skill-pill"><i class="devicon-android-plain"></i> Material Design</span>
-              <span class="skill-pill"><i class="devicon-flutter-plain"></i> State Management</span>
-              <span class="skill-pill"><i class="devicon-sqlite-plain"></i> Offline Persistence</span>
+              <span class="skill-pill"><i class="devicon-flutter-plain"></i> <span>Flutter</span> <span class="skill-pct">90%</span></span>
+              <span class="skill-pill"><i class="devicon-dart-plain"></i> <span>Dart</span> <span class="skill-pct">90%</span></span>
+              <span class="skill-pill"><i class="devicon-apple-original"></i> <span data-en="Mobile Development" data-mn="Мобайл апп хөгжүүлэлт">Мобайл апп хөгжүүлэлт</span> <span class="skill-pct">90%</span></span>
+              <span class="skill-pill"><i class="devicon-apple-original"></i> <span>App Store Connect</span></span>
+              <span class="skill-pill"><i class="devicon-android-plain"></i> <span>Android Studio</span> <span class="skill-pct">40%</span></span>
+              <span class="skill-pill"><i class="devicon-apple-original"></i> <span>Cupertino UI</span></span>
+              <span class="skill-pill"><i class="devicon-android-plain"></i> <span>Material Design</span></span>
+              <span class="skill-pill"><i class="devicon-flutter-plain"></i> <span data-en="State Management" data-mn="Төлөв удирдлага">Төлөв удирдлага</span></span>
             </div>
           </div>
 
           <!-- Backend & Databases -->
           <div class="skill-domain">
-            <h3 data-en="Backend & Databases" data-mn="Backend & Өгөгдлийн сан">Backend & Өгөгдлийн сан</h3>
+            <h3 data-en="Backend &amp; Databases" data-mn="Backend &amp; Өгөгдлийн сан">Backend &amp; Өгөгдлийн сан</h3>
             <div class="skill-tags">
-              <span class="skill-pill"><i class="devicon-supabase-plain"></i> Supabase</span>
-              <span class="skill-pill"><i class="devicon-postgresql-plain"></i> PostgreSQL</span>
-              <span class="skill-pill"><i class="devicon-firebase-plain"></i> Firebase (Auth, Firestore)</span>
-              <span class="skill-pill"><i class="devicon-mysql-plain"></i> MySQL</span>
-              <span class="skill-pill"><i class="devicon-azuresqldatabase-plain"></i> Relational Schema Design</span>
-              <span class="skill-pill"><i class="devicon-fastapi-plain"></i> RESTful APIs</span>
-              <span class="skill-pill"><i class="devicon-postgresql-plain"></i> Row-Level Security (RLS)</span>
-              <span class="skill-pill"><i class="devicon-python-plain"></i> Python (HackerRank Basic)</span>
+              <span class="skill-pill"><i class="devicon-mysql-plain"></i> <span>MySQL</span> <span class="skill-pct">100%</span></span>
+              <span class="skill-pill"><i class="devicon-postgresql-plain"></i> <span>PostgreSQL</span> <span class="skill-pct">90%</span></span>
+              <span class="skill-pill"><i class="devicon-supabase-plain"></i> <span>Supabase</span> <span class="skill-pct">90%</span></span>
+              <span class="skill-pill"><i class="devicon-azuresqldatabase-plain"></i> <span>SQL</span> <span class="skill-pct">80%</span></span>
+              <span class="skill-pill"><i class="devicon-firebase-plain"></i> <span>Firebase</span> <span class="skill-pct">50%</span></span>
+              <span class="skill-pill"><i class="devicon-fastapi-plain"></i> <span>RESTful APIs</span></span>
+              <span class="skill-pill"><i class="devicon-postgresql-plain"></i> <span>RLS Security</span></span>
+              <span class="skill-pill"><i class="devicon-python-plain"></i> <span>Python</span> <span class="skill-pct">20%</span></span>
             </div>
           </div>
 
-          <!-- DevOps & Tooling -->
+          <!-- DevOps & Systems -->
           <div class="skill-domain">
-            <h3 data-en="DevOps & Workflow" data-mn="Хэрэгслүүд & Ажлын урсгал">Хэрэгслүүд & Ажлын урсгал</h3>
+            <h3 data-en="Systems, DevOps &amp; Tooling" data-mn="Систем, хэрэгсэл &amp; автоматжуулалт">Систем, хэрэгсэл &amp; автоматжуулалт</h3>
             <div class="skill-tags">
-              <span class="skill-pill"><i class="devicon-git-plain"></i> Git</span>
-              <span class="skill-pill"><i class="devicon-github-original"></i> GitHub</span>
-              <span class="skill-pill"><i class="devicon-figma-plain"></i> Figma (UI/UX)</span>
-              <span class="skill-pill"><i class="devicon-postman-plain"></i> Postman</span>
-              <span class="skill-pill"><i class="devicon-apple-original"></i> macOS Terminal</span>
-              <span class="skill-pill"><i class="devicon-linux-plain"></i> Linux CLI & Bash</span>
-              <span class="skill-pill"><i class="devicon-nodejs-plain"></i> npm & Node Ecosystem</span>
-              <span class="skill-pill"><i class="devicon-networkx-plain"></i> n8n Automation</span>
+              <span class="skill-pill"><i class="devicon-linux-plain"></i> <span data-en="Linux CLI" data-mn="Линукс (Linux)">Линукс (Linux)</span> <span class="skill-pct">40%</span></span>
+              <span class="skill-pill"><i class="devicon-git-plain"></i> <span>Git</span></span>
+              <span class="skill-pill"><i class="devicon-github-original"></i> <span>GitHub</span></span>
+              <span class="skill-pill"><i class="devicon-windows8-original"></i> <span>MS Word &amp; PPT</span> <span class="skill-pct">50%</span></span>
+              <span class="skill-pill"><i class="devicon-figma-plain"></i> <span>Figma UI/UX</span></span>
+              <span class="skill-pill"><i class="devicon-networkx-plain"></i> <span>n8n Automation</span></span>
+              <span class="skill-pill"><i class="devicon-apple-original"></i> <span>macOS Terminal</span></span>
+              <span class="skill-pill"><i class="devicon-nodejs-plain"></i> <span>npm / Node</span></span>
+            </div>
+          </div>
+
+          <!-- Professional & Soft Skills -->
+          <div class="skill-domain" style="grid-column: 1 / -1;">
+            <h3 data-en="Professional Strengths &amp; Leadership" data-mn="Хувийн болон мэргэжлийн ур чадвар">Хувийн болон мэргэжлийн ур чадвар</h3>
+            <div class="skill-tags">
+              <span class="skill-pill"><span data-en="Team Leadership (Led 2-Person Team)" data-mn="Багаар ажиллах &amp; удирдах ур чадвар (2 хүнтэй баг удирдсан)">Багаар ажиллах &amp; удирдах ур чадвар (2 хүнтэй баг удирдсан)</span></span>
+              <span class="skill-pill"><span data-en="Time Management &amp; Punctuality" data-mn="Цагийн менежмент &amp; хуваарь баримтлах">Цагийн менежмент &amp; хуваарь баримтлах</span></span>
+              <span class="skill-pill"><span data-en="Clear Communication &amp; Articulation" data-mn="Санал бодлоо тодорхой илэрхийлэх &amp; харилцааны чадвар">Санал бодлоо тодорхой илэрхийлэх &amp; харилцааны чадвар</span></span>
+              <span class="skill-pill"><span data-en="Feedback &amp; Request Agility" data-mn="Санал хүсэлттэй ажиллах, асуудал шийдвэрлэх">Санал хүсэлттэй ажиллах, асуудал шийдвэрлэх</span></span>
+              <span class="skill-pill"><span data-en="Continuous Learning &amp; Rapid Tech Adaptability" data-mn="Шинэ технологийг бие даан хурдан сурах">Шинэ технологийг бие даан хурдан сурах</span></span>
+              <span class="skill-pill"><span data-en="Hardware Diagnostics &amp; IT Technical Support" data-mn="Компьютерын техник хангамж, асуудал оношлох &amp; IT дэмжлэг">Компьютерын техник хангамж, асуудал оношлох &amp; IT дэмжлэг</span></span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 05. Experience -->
-    <section id="experience" class="section">
+    <!-- 05. Foreign Languages -->
+    <section id="languages" class="section">
       <div class="container">
-        <h2 class="section-title"><span class="num">05.</span> <span data-en="Experience" data-mn="Туршлага">Туршлага</span></h2>
+        <h2 class="section-title"><span class="num">05.</span> <span data-en="Foreign Languages" data-mn="Гадаад хэлний мэдлэг">Гадаад хэлний мэдлэг</span></h2>
 
-        <div class="timeline-wrap">
-          <article class="timeline-card">
-            <div class="timeline-card-header">
-              <h3 class="timeline-card-role" data-en="Frontend & Mobile Software Engineer (Independent)" data-mn="Фронтенд & Мобайл хөгжүүлэгч (Бие даасан)">Фронтенд & Мобайл хөгжүүлэгч (Бие даасан)</h3>
-              <span class="timeline-card-period">2023 — Present</span>
+        <div class="languages-grid">
+          <div class="lang-card">
+            <div class="lang-name">
+              <span>🇲🇳</span>
+              <span data-en="Mongolian" data-mn="Монгол хэл">Монгол хэл</span>
             </div>
-            <div class="timeline-card-org" data-en="Product Engineering &middot; Web Interfaces & Mobile Apps" data-mn="Бүтээгдэхүүн хөгжүүлэлт &middot; Вэб интерфэйс ба Мобайл апп">Бүтээгдэхүүн хөгжүүлэлт &middot; Вэб интерфэйс ба Мобайл апп</div>
+            <span class="lang-level" data-en="Native" data-mn="Төрөлх хэл">Төрөлх хэл</span>
+          </div>
 
-            <ul class="timeline-bullets">
-              <li data-en="Developed responsive, semantic, and performant web interfaces utilizing HTML5, CSS3, modern JavaScript, and Tailwind CSS." data-mn="HTML5, CSS3, орчин үеийн JavaScript болон Tailwind CSS ашиглан олон төрлийн дэлгэцэнд зохицсон, цэвэр бүтэцтэй вэб интерфэйсүүдийг хөгжүүлсэн.">
-                HTML5, CSS3, орчин үеийн JavaScript болон Tailwind CSS ашиглан олон төрлийн дэлгэцэнд зохицсон, цэвэр бүтэцтэй вэб интерфэйсүүдийг хөгжүүлсэн.
-              </li>
-              <li data-en="Utilized TypeScript to build strongly-typed client-side logic, reducing runtime bugs and ensuring robust data handling across applications." data-mn="TypeScript ашиглан хэрэглэгчийн талын логикийг алдаагүй, төрөлжсөн (type-safe) байдлаар бичиж өгөгдлийн боловсруулалтыг найдвартай болгосон.">
-                TypeScript ашиглан хэрэглэгчийн талын логикийг алдаагүй, төрөлжсөн (type-safe) байдлаар бичиж өгөгдлийн боловсруулалтыг найдвартай болгосон.
-              </li>
-              <li data-en="Independently designed, architected, and shipped 4 production mobile applications to the Apple App Store, handling 100% of the lifecycle from Figma UX prototypes to App Store approval." data-mn="Figma дээрх UI дизайнаас эхлэн эцсийн хувилбар хүртэл 4 бодит мобайл аппликейшнийг бие даан архитектурчилж, Apple App Store-д олон улсын зах зээлд нийтэлсэн.">
-                Figma дээрх UI дизайнаас эхлэн эцсийн хувилбар хүртэл 4 бодит мобайл аппликейшнийг бие даан архитектурчилж, Apple App Store-д олон улсын зах зээлд нийтэлсэн.
-              </li>
-              <li data-en="Architected cloud databases and authentication flows in Supabase and PostgreSQL, enforcing Row-Level Security (RLS) policies and RESTful API endpoints." data-mn="Supabase болон PostgreSQL орчинд өгөгдлийн бааз төлөвлөж, Row-Level Security (RLS), хэрэглэгчийн баталгаажуулалт болон REST API холболтуудыг нэвтрүүлсэн.">
-                Supabase болон PostgreSQL орчинд өгөгдлийн бааз төлөвлөж, Row-Level Security (RLS), хэрэглэгчийн баталгаажуулалт болон REST API холболтуудыг нэвтрүүлсэн.
-              </li>
-              <li data-en="Integrated Firebase services (Firestore, Authentication, Analytics) for real-time cloud data storage and seamless client synchronization." data-mn="Firebase Authentication, Firestore өгөгдлийн сан зэрэг cloud шийдлүүдийг бодит цагийн өгөгдөл синхрончлолд амжилттай нэгтгэн ажилласан.">
-                Firebase Authentication, Firestore өгөгдлийн сан зэрэг cloud шийдлүүдийг бодит цагийн өгөгдөл синхрончлолд амжилттай нэгтгэн ажилласан.
-              </li>
-              <li data-en="Automated repetitive workflows and deployment tasks using n8n and Git version control." data-mn="Ажлын урсгалыг оновчлох, өгөгдлийн боловсруулалтыг автоматжуулахад n8n болон Git хувилбар удирдлагыг ашигласан.">
-                Ажлын урсгалыг оновчлох, өгөгдлийн боловсруулалтыг автоматжуулахад n8n болон Git хувилбар удирдлагыг ашигласан.
-              </li>
-            </ul>
+          <div class="lang-card">
+            <div class="lang-name">
+              <span>🇬🇧</span>
+              <span data-en="English" data-mn="Англи хэл">Англи хэл</span>
+            </div>
+            <span class="lang-level" data-en="Advanced" data-mn="Ахисан шат">Ахисан шат</span>
+          </div>
+
+          <div class="lang-card">
+            <div class="lang-name">
+              <span>🇹🇷</span>
+              <span data-en="Turkish" data-mn="Турк хэл">Турк хэл</span>
+            </div>
+            <span class="lang-level" data-en="Elementary" data-mn="Анхан шат">Анхан шат</span>
+          </div>
+
+          <div class="lang-card">
+            <div class="lang-name">
+              <span>🇷🇺</span>
+              <span data-en="Russian" data-mn="Орос хэл">Орос хэл</span>
+            </div>
+            <span class="lang-level" data-en="Elementary" data-mn="Анхан шат">Анхан шат</span>
+          </div>
+
+          <div class="lang-card">
+            <div class="lang-name">
+              <span>🇯🇵</span>
+              <span data-en="Japanese" data-mn="Япон хэл">Япон хэл</span>
+            </div>
+            <span class="lang-level" data-en="Elementary" data-mn="Анхан шат">Анхан шат</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. Education & Credentials -->
+    <section id="education" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title"><span class="num">06.</span> <span data-en="Education &amp; Certificates" data-mn="Боловсрол &amp; Сертификат">Боловсрол &amp; Сертификат</span></h2>
+
+        <div class="edu-list">
+          <article class="edu-item">
+            <div class="edu-item-period">2022 — 2026</div>
+            <div class="edu-item-body">
+              <h3 data-en="Bachelor of Software Engineering" data-mn="Программ хангамжийн бакалавр">Программ хангамжийн бакалавр</h3>
+              <div class="edu-item-inst" data-en="Mongolian University of Life Sciences (MULS)" data-mn="Хөдөө Аж Ахуйн Их Сургууль (ХААИС)">Хөдөө Аж Ахуйн Их Сургууль (ХААИС)</div>
+              <p class="edu-item-desc" data-en="Completed Bachelor degree in Software Engineering. Core coursework in Data Structures, Algorithms, Relational Database Design, Object-Oriented Programming, and Web/Mobile Architectures. GPA: 3.0." data-mn="Программ хангамжийн чиглэлээр төгссөн. Өгөгдлийн бүтэц, алгоритм, реляци өгөгдлийн сангийн бүтэц, объект хандалтат программчлал болон вэб, мобайл архитектурын чиглэлээр мэргэшсэн. Голч дүн: 3.0.">
+                Программ хангамжийн чиглэлээр төгссөн. Өгөгдлийн бүтэц, алгоритм, реляци өгөгдлийн сангийн бүтэц, объект хандалтат программчлал болон вэб, мобайл архитектурын чиглэлээр мэргэшсэн. Голч дүн: 3.0.
+              </p>
+            </div>
           </article>
         </div>
+
+        <div class="certs-grid">
+          <div class="cert-box">
+            <div class="cert-left">
+              <div class="cert-icon"><i class="devicon-html5-plain"></i></div>
+              <div>
+                <div class="cert-title">Introduction to Front-End Development</div>
+                <div class="cert-issuer">Coursera (Meta)</div>
+              </div>
+            </div>
+            <div class="cert-date">2022 — 2023</div>
+          </div>
+
+          <div class="cert-box">
+            <div class="cert-left">
+              <div class="cert-icon"><i class="devicon-python-plain"></i></div>
+              <div>
+                <div class="cert-title">Python (Basic) Certificate</div>
+                <div class="cert-issuer">HackerRank</div>
+              </div>
+            </div>
+            <div class="cert-date">2022 — 2023</div>
+          </div>
+
+          <div class="cert-box">
+            <div class="cert-left">
+              <div class="cert-icon"><i class="devicon-flutter-plain"></i></div>
+              <div>
+                <div class="cert-title">Flutter &amp; Dart - The Complete Developer's Guide</div>
+                <div class="cert-issuer">Udemy</div>
+              </div>
+            </div>
+            <div class="cert-date">2023 — 2024</div>
+          </div>
+
+          <div class="cert-box">
+            <div class="cert-left">
+              <div class="cert-icon"><i class="devicon-firebase-plain"></i></div>
+              <div>
+                <div class="cert-title">Flutter &amp; Firebase: Build 5 Social Media Apps</div>
+                <div class="cert-issuer">Udemy</div>
+              </div>
+            </div>
+            <div class="cert-date">2023 — 2024</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- 06. Contact -->
-    <section id="contact" class="section section-alt">
+    <!-- 07. Contact -->
+    <section id="contact" class="section">
       <div class="container">
         <div class="contact-block">
           <h2 class="contact-heading" data-en="Let's build something together" data-mn="Хамтран ажиллах">Хамтран ажиллах</h2>
-          <p class="contact-intro" data-en="I am open to full-time frontend & mobile engineering roles, web development opportunities, and ambitious software products." data-mn="Бүтэн цагийн фронтенд & мобайл инженерийн албан тушаал, вэб хөгжүүлэлтийн төслүүд болон бүтээгдэхүүн хөгжүүлэлтийн чиглэлээр хамтран ажиллахад нээлттэй байна.">
-            Бүтэн цагийн фронтенд & мобайл инженерийн албан тушаал, вэб хөгжүүлэлтийн төслүүд болон бүтээгдэхүүн хөгжүүлэлтийн чиглэлээр хамтран ажиллахад нээлттэй байна.
+          <p class="contact-intro" data-en="I am open to full-time frontend &amp; mobile engineering roles, web development opportunities, and ambitious software products." data-mn="Бүтэн цагийн фронтенд &amp; мобайл инженерийн албан тушаал, вэб хөгжүүлэлтийн төслүүд болон бүтээгдэхүүн хөгжүүлэлтийн чиглэлээр хамтран ажиллахад нээлттэй байна.">
+            Бүтэн цагийн фронтенд &amp; мобайл инженерийн албан тушаал, вэб хөгжүүлэлтийн төслүүд болон бүтээгдэхүүн хөгжүүлэлтийн чиглэлээр хамтран ажиллахад нээлттэй байна.
           </p>
 
           <div class="contact-links-grid">
@@ -1462,6 +1759,10 @@
             <a href="tel:+97695550696" class="btn btn-ghost">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
               <span>+976 9555 0696</span>
+            </a>
+            <a href="https://facebook.com/eska.esko" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" title="Facebook Profile">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Facebook (eska esko)</span>
             </a>
             <a href="https://github.com/Esmagzam" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
               <i class="devicon-github-original"></i>
