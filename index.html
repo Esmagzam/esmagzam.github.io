@@ -542,52 +542,6 @@
       line-height: 1.4;
     }
 
-    /* General Info / Personal Details */
-    .general-info-wrap {
-      margin-top: 40px;
-      padding-top: 32px;
-      border-top: 1px solid var(--line);
-    }
-    .general-info-heading {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-    .general-info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 14px;
-    }
-    .info-item {
-      border: 1px solid var(--line);
-      background: var(--surface);
-      padding: 16px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      transition: border-color 0.25s, background-color 0.25s;
-    }
-    .info-item:hover {
-      border-color: var(--line-strong);
-      background: var(--surface-hover);
-    }
-    .info-item-label {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .info-item-value {
-      font-size: 13.5px;
-      font-weight: 500;
-      color: var(--fg);
-      line-height: 1.45;
-    }
-
     /* 02. Education & Credentials */
     .edu-list {
       display: grid;
@@ -1096,13 +1050,13 @@
       .hero-tagline { font-size: 9pt !important; color: #333 !important; }
       .section { padding: 12pt 0 !important; border-color: #ddd !important; page-break-inside: avoid; }
       .section-title { font-size: 13pt !important; color: #000 !important; margin-bottom: 8pt !important; }
-      .project-card, .timeline-card, .metric-cell, .cert-box, .info-item, .lang-card {
+      .project-card, .timeline-card, .metric-cell, .cert-box, .lang-card {
         background: #fff !important;
         border: 1px solid #ccc !important;
         page-break-inside: avoid;
       }
       .project-name, .timeline-card-role, .timeline-card-company, .lang-name { color: #000 !important; }
-      .project-body, .timeline-bullets li, .about-text p, .info-item-value { color: #222 !important; }
+      .project-body, .timeline-bullets li, .about-text p { color: #222 !important; }
       .stack-tag, .skill-pill, .timeline-card-period, .timeline-badge-lead, .lang-level {
         border-color: #bbb !important;
         color: #000 !important;
@@ -1296,45 +1250,6 @@
             <div class="metric-cell">
               <div class="metric-val">3.0</div>
               <div class="metric-title" data-en="Software Engineering GPA" data-mn="Программ хангамжийн бакалавр (3.0 голч)">Программ хангамжийн бакалавр (3.0 голч)</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- General Info & Key Details from Official CV -->
-        <div class="general-info-wrap">
-          <div class="general-info-heading" data-en="Personal & Professional Summary" data-mn="Анкетын үзүүлэлт">Анкетын үзүүлэлт</div>
-          <div class="general-info-grid">
-            <div class="info-item">
-              <span class="info-item-label" data-en="Date of Birth" data-mn="Төрсөн огноо">Төрсөн огноо</span>
-              <span class="info-item-value" data-en="Oct 26, 2002 (Age 23)" data-mn="2002-10-26 (23 нас)">2002-10-26 (23 нас)</span>
-            </div>
-            <div class="info-item">
-              <span class="info-item-label" data-en="Gender & Status" data-mn="Хүйс & Гэрлэлтийн байдал">Хүйс & Гэрлэлтийн байдал</span>
-              <span class="info-item-value" data-en="Male &middot; Single" data-mn="Эрэгтэй &middot; Гэрлээгүй">Эрэгтэй &middot; Гэрлээгүй</span>
-            </div>
-            <div class="info-item">
-              <span class="info-item-label" data-en="Location" data-mn="Оршин суугаа хаяг">Оршин суугаа хаяг</span>
-              <span class="info-item-value" data-en="Sukhbaatar District, Ulaanbaatar" data-mn="Сүхбаатар дүүрэг, Улаанбаатар">Сүхбаатар дүүрэг, Улаанбаатар</span>
-            </div>
-            <div class="info-item">
-              <span class="info-item-label" data-en="Civil Registry No." data-mn="Регистрийн дугаар">Регистрийн дугаар</span>
-              <span class="info-item-value">БЗ02302611</span>
-            </div>
-            <div class="info-item">
-              <span class="info-item-label" data-en="Target Roles" data-mn="Сонирхож буй ажлын байр">Сонирхож буй ажлын байр</span>
-              <span class="info-item-value" data-en="Frontend Developer &middot; Mobile Engineer &middot; IT Support &middot; Systems Engineer" data-mn="Frontend хөгжүүлэгч &middot; Мобайл инженер &middot; Мэдээлэл технологийн инженер &middot; Системийн инженер">Frontend хөгжүүлэгч &middot; Мобайл инженер &middot; Мэдээлэл технологийн инженер &middot; Системийн инженер</span>
-            </div>
-            <div class="info-item">
-              <span class="info-item-label" data-en="Salary Expectation" data-mn="Цалингийн хүлээлт">Цалингийн хүлээлт</span>
-              <span class="info-item-value" data-en="1,800,000 - 2,100,000 MNT &middot; Full-time" data-mn="1,800,000 - 2,100,000₮ &middot; Бүтэн цагийн">1,800,000 - 2,100,000₮ &middot; Бүтэн цагийн</span>
-            </div>
-            <div class="info-item">
-              <span class="info-item-label" data-en="Leadership Experience" data-mn="Баг удирдах туршлага">Баг удирдах туршлага</span>
-              <span class="info-item-value" data-en="Led 2-person development team at Supermarket web project" data-mn="Супермаркетын вэб төсөлд 2 хүнтэй хөгжүүлэлтийн баг удирдан ажилласан">Супермаркетын вэб төсөлд 2 хүнтэй хөгжүүлэлтийн баг удирдан ажилласан</span>
-            </div>
-            <div class="info-item">
-              <span class="info-item-label" data-en="Direct Contacts" data-mn="Холбоо барих">Холбоо барих</span>
-              <span class="info-item-value">+976 9555 0696 &middot; esh6889@gmail.com</span>
             </div>
           </div>
         </div>
